@@ -1,0 +1,30 @@
+﻿<UserControl
+	x:Class="Demo.UWP.ItemViews.CouponTabView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:bean="using:Demo.UWP.Models"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="using:Demo.UWP.ItemViews"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	d:DesignHeight="300"
+	d:DesignWidth="400"
+	mc:Ignorable="d">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<DataTemplate x:Key="AdTemplate" x:DataType="bean:AdBean">
+				<local:AdItemView />
+			</DataTemplate>
+			<DataTemplate x:Key="NewsTemplate" x:DataType="bean:HomeBean">
+				<local:NewsItemView />
+			</DataTemplate>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<Grid>
+		<ListView
+			IsItemClickEnabled="True"
+			ItemContainerStyle="{StaticResource ListViewItemStyle1}"
+			ItemTemplate="{StaticResource NewsTemplate}"
+			ItemsSource="{x:Bind CouponTabVM.NewsList}"
+			SelectionMode="None" />
+	</Grid>
+</UserControl>

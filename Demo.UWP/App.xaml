@@ -1,0 +1,21 @@
+﻿<Application
+	x:Class="Demo.UWP.App"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="using:Demo.UWP"
+	xmlns:converters="using:Demo.UWP.Converters"
+	RequestedTheme="Light">
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="MyStyle.xaml" />
+				<ResourceDictionary Source="MyPivotStyle.xaml" />
+				<ResourceDictionary Source="MyRadioStyle.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+			<converters:HeadConverter x:Key="HeadConverter" />
+			<converters:ImageConverter x:Key="ImageConverter" />
+			<converters:VisibleConverter x:Key="VisibleConverter" />
+			<converters:RadioImageButtonConverter x:Key="RadioImageButtonConverter" />
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>
